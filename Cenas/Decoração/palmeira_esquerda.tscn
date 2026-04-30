@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bith3r11ruuyc"]
+
+[ext_resource type="Texture2D" uid="uid://ctv1b4hp5c3hj" path="res://Assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="1_2jam2"]
+[ext_resource type="Texture2D" uid="uid://dxfw0r14p5g8c" path="res://Assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="2_5e76o"]
+[ext_resource type="Texture2D" uid="uid://eg6i320rxq02" path="res://Assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="3_sh56l"]
+[ext_resource type="Texture2D" uid="uid://vo2xg4pnnee5" path="res://Assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="4_dejwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4rqo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2jam2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5e76o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sh56l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dejwi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a0a3"]
+size = Vector2(23, 2)
+
+[node name="Palmeira Esquerda" type="AnimatedSprite2D" unique_id=25818963]
+sprite_frames = SubResource("SpriteFrames_q4rqo")
+frame_progress = 0.9019871
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1187412023]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1188974148]
+position = Vector2(6, -25)
+shape = SubResource("RectangleShape2D_5a0a3")
+one_way_collision = true

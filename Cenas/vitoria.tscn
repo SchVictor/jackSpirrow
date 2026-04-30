@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://vitoria_jack"]
+
+[ext_resource type="Script" path="res://Scripts/vitoria.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dlh2jay4xk2ds" path="res://Assets/Palm Tree Island/Sprites/Background/sky.png" id="2_sky"]
+[ext_resource type="Texture2D" uid="uid://b0yfcagmlj8ch" path="res://Assets/Palm Tree Island/Sprites/Background/sea.png" id="3_sea"]
+[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Yellow Board/Yellow Board (guide).png" id="4_board"]
+[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Green Button/Green Button (guide).png" id="5_btn_green"]
+[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Yellow Button/Yellow Button (guide).png" id="6_btn_yellow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+bg_color = Color(0, 0, 0, 0)
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_normal"]
+texture = ExtResource("5_btn_green")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_hover"]
+texture = ExtResource("5_btn_green")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(1.2, 1.2, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reiniciar_normal"]
+texture = ExtResource("6_btn_yellow")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reiniciar_hover"]
+texture = ExtResource("6_btn_yellow")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(1.2, 1.0, 0.6, 1)
+
+[node name="Vitoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_script")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -101)
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1.1, 1.05, 0.8, 1)
+position = Vector2(519, 58.5)
+scale = Vector2(9.268, 2.049)
+texture = ExtResource("2_sky")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -101)
+motion_scale = Vector2(0.15, 0.15)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(0.8, 1.0, 1.1, 1)
+position = Vector2(519, 592.5)
+scale = Vector2(9.268, 4.635)
+texture = ExtResource("3_sea")
+
+[node name="FundoDourado" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.6, 0.45, 0.0, 0.25)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PainelFundo" type="NinePatchRect" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(420, 420)
+texture = ExtResource("4_board")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(380, 380)
+theme_override_constants/separation = 20
+
+[node name="LabelTrofeu" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "🏆"
+theme_override_font_sizes/font_size = 64
+
+[node name="LabelVitoria" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "VITÓRIA!"
+theme_override_font_sizes/font_size = 44
+theme_override_colors/font_color = Color(0.7, 0.45, 0.0, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 0.1, 0.0, 0.8)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+
+[node name="LabelSubtitulo" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Os mares são seus, capitão!"
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.35, 0.2, 0.05, 1)
+
+[node name="LabelMoedas" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = ""
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.55, 0.35, 0.0, 1)
+
+[node name="BtnMenu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 60)
+size_flags_horizontal = 4
+text = "🏠  MENU PRINCIPAL"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.1, 0.25, 0.05, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_menu_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_menu_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_normal")
+theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")
+
+[node name="BtnReiniciar" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 60)
+size_flags_horizontal = 4
+text = "⚔  JOGAR NOVAMENTE"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.25, 0.1, 0.0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_reiniciar_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_reiniciar_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_reiniciar_normal")
+theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dvqhdhi6t3ck6"]
+
+[ext_resource type="Texture2D" uid="uid://dredc17lun8n6" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="1_m38yt"]
+[ext_resource type="Texture2D" uid="uid://caici0tof4l81" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="2_lgwqv"]
+[ext_resource type="Texture2D" uid="uid://bt1qan1f6tmuf" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="3_1dyta"]
+[ext_resource type="Texture2D" uid="uid://c7e0w00xnj7w7" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="4_cuhx5"]
+[ext_resource type="Texture2D" uid="uid://5xsiwusfjhje" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="5_i81eb"]
+[ext_resource type="Texture2D" uid="uid://gdsvjo2u775a" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="6_oesvk"]
+[ext_resource type="Texture2D" uid="uid://dqvwhsc46m3u1" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="7_2ii6k"]
+[ext_resource type="Texture2D" uid="uid://d2m6i8yin0anm" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="8_uxd15"]
+[ext_resource type="Texture2D" uid="uid://d4l0yfkecl4sw" path="res://Assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="9_4r2ex"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wjyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m38yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lgwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1dyta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cuhx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i81eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oesvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ii6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uxd15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4r2ex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="bandeira" type="AnimatedSprite2D" unique_id=2074472540]
+sprite_frames = SubResource("SpriteFrames_0wjyn")
+frame_progress = 0.0032377574
