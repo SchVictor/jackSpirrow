@@ -11,13 +11,18 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var direction : float
-var atacando : bool
-var vida: int = vida_max
+var direction: float
+var atacando: bool
+var vida: int
 var is_dead: bool = false
 var levando_hit: bool = false
 
 const NUMERO_COLLISION = 24
+
+func _ready() -> void:
+	vida = vida_max
+	# Notifica a HUD com a vida inicial
+	GameManager.atualizar_vida(vida, vida_max)
 
 func _process(_delta):
 	if is_dead:
@@ -52,15 +57,15 @@ func animate():
 	if velocity.x != 0:
 		animation.play("run")
 		return
-	if velocity.x == 0:
-		animation.play("idle")
-		return
+	animation.play("idle")
 
 func _physics_process(delta):
 	gravidade(delta)
 	mover()
 
 func _input(_event: InputEvent):
+	if is_dead:
+		return
 	if Input.is_action_just_pressed("pulo") and is_on_floor():
 		jump()
 	if Input.is_action_pressed("ataque"):
@@ -80,6 +85,7 @@ func jump():
 
 func ataque():
 	atacando = true
+	%SomAtaque.play() # Toca o som do ataque!
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack 01":
@@ -90,9 +96,11 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		levando_hit = false
 
 func take_damage(amount: int):
-	if is_dead:
+	if is_dead or levando_hit:
 		return
 	vida -= amount
+	vida = max(vida, 0)
+	GameManager.atualizar_vida(vida, vida_max)
 	if vida <= 0:
 		die()
 	else:
@@ -101,19 +109,18 @@ func take_damage(amount: int):
 
 func die():
 	is_dead = true
-	animation.play("death")
+	direction = 0
 	velocity = Vector2.ZERO
+	animation.play("death")
+	%SomMorte.play() # Toca o grito/som de derrota!
 
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("inimigo") and atacando:
 		body.take_damage(dano)
 
 func _on_timer_timeout():
-	# Agora chama o GameManager em vez de recarregar a cena diretamente
 	GameManager.acionar_game_over()
-
 
 func _on_area_fim_body_entered(body):
 	if body.is_in_group("player"):
 		GameManager.acionar_vitoria()
-		get_tree().change_scene_to_file("res://Cenas/vitoria.tscn")

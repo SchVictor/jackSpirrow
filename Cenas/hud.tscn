@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c0ago3qosw7sv"]
+
+[ext_resource type="Script" uid="uid://do1k4eouht714" path="res://Scripts/hud.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+bg_color = Color(0.05, 0.02, 0.02, 0.65)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD" type="CanvasLayer" unique_id=1750263281]
+layer = 100
+script = ExtResource("1_hud")
+
+[node name="Control" type="Control" parent="." unique_id=1365546795]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.045
+offset_bottom = -29.160002
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VidaBox" type="PanelContainer" parent="Control" unique_id=1717485763]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.076000005
+offset_right = 14.447998
+offset_bottom = 25.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
+
+[node name="Margem" type="MarginContainer" parent="Control/VidaBox" unique_id=1053418599]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="Control/VidaBox/Margem" unique_id=2117809593]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelIcone" type="Label" parent="Control/VidaBox/Margem/HBox" unique_id=581237722]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = "VIDA"
+
+[node name="CoracaoContainer" type="HBoxContainer" parent="Control/VidaBox/Margem/HBox" unique_id=2095253604]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="MoedasBox" type="PanelContainer" parent="Control" unique_id=1445299051]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
+
+[node name="Margem" type="MarginContainer" parent="Control/MoedasBox" unique_id=965719327]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="Control/MoedasBox/Margem" unique_id=1430138452]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="LabelIcone" type="Label" parent="Control/MoedasBox/Margem/HBox" unique_id=1470312581]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🪙"
+vertical_alignment = 1
+
+[node name="LabelMoedas" type="Label" parent="Control/MoedasBox/Margem/HBox" unique_id=2082307607]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+vertical_alignment = 1

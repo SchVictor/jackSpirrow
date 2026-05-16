@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://g1rqm0o0v04s"
+path="res://.godot/imported/Me and the Devil (Instrumental - Ultra Slowed)(MP3_160K).mp3-14ae08bcd42c6c9efd485aa97e76abd5.mp3str"
+
+[deps]
+
+source_file="res://Assets/audios/Me and the Devil (Instrumental - Ultra Slowed)(MP3_160K).mp3"
+dest_files=["res://.godot/imported/Me and the Devil (Instrumental - Ultra Slowed)(MP3_160K).mp3-14ae08bcd42c6c9efd485aa97e76abd5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

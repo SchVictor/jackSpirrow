@@ -1,169 +1,235 @@
-[gd_scene format=3 uid="uid://menu_principal_jack"]
+[gd_scene format=3 uid="uid://dl63y781rtwd6"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://dya3poa5ih7si" path="res://Scripts/menu.gd" id="1_menu"]
 [ext_resource type="Texture2D" uid="uid://dlh2jay4xk2ds" path="res://Assets/Palm Tree Island/Sprites/Background/sky.png" id="2_sky"]
 [ext_resource type="Texture2D" uid="uid://b0yfcagmlj8ch" path="res://Assets/Palm Tree Island/Sprites/Background/sea.png" id="3_sea"]
 [ext_resource type="Texture2D" uid="uid://c1akb56fo3kun" path="res://Assets/Palm Tree Island/Sprites/Background/Additional Water.png" id="4_water"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Yellow Board/Yellow Board (guide).png" id="5_board"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Green Button/Green Button (guide).png" id="6_btn_green"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Yellow Button/Yellow Button (guide).png" id="7_btn_yellow"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+content_margin_left = 48.0
+content_margin_top = 40.0
+content_margin_right = 48.0
+content_margin_bottom = 40.0
+bg_color = Color(0.06, 0.08, 0.18, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.55, 0.85, 0.7)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sep"]
+bg_color = Color(0.25, 0.55, 0.85, 0.25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_jogar"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0.1, 0.45, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.75, 0.35, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_jogar_hover"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0.15, 0.58, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.45, 0.9, 0.5, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
 bg_color = Color(0, 0, 0, 0)
-border_blend = false
 draw_center = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_jogar_normal"]
-texture = ExtResource("6_btn_green")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sair"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0.35, 0.12, 0.08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7, 0.3, 0.2, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_jogar_hover"]
-texture = ExtResource("6_btn_green")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-modulate_color = Color(1.2, 1.2, 0.8, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_sair_hover"]
+content_margin_left = 20.0
+content_margin_top = 14.0
+content_margin_right = 20.0
+content_margin_bottom = 14.0
+bg_color = Color(0.5, 0.15, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9, 0.4, 0.25, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_sair_normal"]
-texture = ExtResource("7_btn_yellow")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_sair_hover"]
-texture = ExtResource("7_btn_yellow")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-modulate_color = Color(1.2, 1.0, 0.6, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_painel"]
-texture = ExtResource("5_board")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
-
-[node name="MenuPrincipal" type="Control"]
+[node name="MenuPrincipal" type="Control" unique_id=509859998]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Parallax" type="ParallaxBackground" parent="." unique_id=526347876]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -101)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1024, 0)
+[node name="CamadaCeu" type="ParallaxLayer" parent="Parallax" unique_id=310123880]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(576, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(519, 58.5)
-scale = Vector2(9.268, 2.049)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/CamadaCeu" unique_id=1721695769]
+position = Vector2(413.99997, 323.2)
+scale = Vector2(7.3928566, 2.1263158)
 texture = ExtResource("2_sky")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -101)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1024, 0)
+[node name="CamadaMar" type="ParallaxLayer" parent="Parallax" unique_id=402009828]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(576, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(519, 592.5)
-scale = Vector2(9.268, 4.635)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/CamadaMar" unique_id=2042207311]
+position = Vector2(433, 431)
+scale = Vector2(7.642858, 4.2083335)
 texture = ExtResource("3_sea")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -101)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1024, 0)
+[node name="CamadaAgua" type="ParallaxLayer" parent="Parallax" unique_id=1830031334]
+motion_scale = Vector2(0.8, 0)
+motion_mirroring = Vector2(576, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(518.75, 948)
-scale = Vector2(32.42, 8.312)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/CamadaAgua" unique_id=2100769878]
+position = Vector2(416, 601)
+scale = Vector2(26, 2.9374995)
 texture = ExtResource("4_water")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Escurecimento" type="ColorRect" parent="." unique_id=421159935]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.03, 0.12, 0.45)
 
-[node name="PainelFundo" type="NinePatchRect" parent="CenterContainer"]
-layout_mode = 2
-custom_minimum_size = Vector2(420, 380)
-texture = ExtResource("5_board")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-custom_minimum_size = Vector2(380, 340)
-theme_override_constants/separation = 24
-
-[node name="LabelTitulo" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "⚓ JACK ESPIRROW ⚓"
-theme_override_font_sizes/font_size = 36
-theme_override_colors/font_color = Color(0.2, 0.1, 0.0, 1)
-theme_override_colors/font_shadow_color = Color(0.8, 0.6, 0.1, 0.8)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-
-[node name="LabelSubtitulo" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "~ O Pirata dos Sete Mares ~"
-theme_override_font_sizes/font_size = 16
-theme_override_colors/font_color = Color(0.35, 0.2, 0.05, 1)
-
-[node name="Separador" type="HSeparator" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxFlat_transparent")
-theme_override_constants/separation = 10
-
-[node name="BtnJogar" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-custom_minimum_size = Vector2(300, 64)
-size_flags_horizontal = 4
-text = "⚔  JOGAR"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.1, 0.25, 0.05, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_btn_jogar_normal")
-theme_override_styles/hover = SubResource("StyleBoxTexture_btn_jogar_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_jogar_normal")
-theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")
-
-[node name="BtnSair" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-custom_minimum_size = Vector2(300, 64)
-size_flags_horizontal = 4
-text = "🏴‍☠  SAIR"
-theme_override_font_sizes/font_size = 24
-theme_override_colors/font_color = Color(0.25, 0.1, 0.0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_btn_sair_normal")
-theme_override_styles/hover = SubResource("StyleBoxTexture_btn_sair_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_sair_normal")
-theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")
-
-[node name="LabelVersao" type="Label" parent="."]
+[node name="Fundo" type="Control" parent="." unique_id=215552585]
 layout_mode = 1
-anchors_preset = 4
-anchor_left = 0.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centro" type="CenterContainer" parent="Fundo" unique_id=817445678]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Painel" type="PanelContainer" parent="Fundo/Centro" unique_id=1245291590]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
+
+[node name="VBox" type="VBoxContainer" parent="Fundo/Centro/Painel" unique_id=796152680]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LabelAncora" type="Label" parent="Fundo/Centro/Painel/VBox" unique_id=102467166]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6, 0.85, 1, 0.9)
+theme_override_font_sizes/font_size = 44
+text = "⚓"
+
+[node name="LabelTitulo" type="Label" parent="Fundo/Centro/Painel/VBox" unique_id=829902181]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.95, 0.88, 0.55, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.3, 0.6, 0.9)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 38
+text = "JACK ESPIRROW"
+
+[node name="LabelSub" type="Label" parent="Fundo/Centro/Painel/VBox" unique_id=1414471646]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 0.75)
+theme_override_font_sizes/font_size = 14
+text = "O Pirata dos Sete Mares"
+
+[node name="Separador" type="HSeparator" parent="Fundo/Centro/Painel/VBox" unique_id=497145852]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="BtnJogar" type="Button" parent="Fundo/Centro/Painel/VBox" unique_id=1256388584]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 1, 0.88, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_jogar")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_jogar")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_jogar_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "   JOGAR   "
+
+[node name="BtnSair" type="Button" parent="Fundo/Centro/Painel/VBox" unique_id=681369697]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.75, 0.65, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_sair")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_sair")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_sair_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "   SAIR"
+
+[node name="LabelVersao" type="Label" parent="." unique_id=1921389440]
+layout_mode = 1
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -24.0
+offset_left = 10.0
+offset_top = -22.0
 offset_right = 200.0
-text = "v0.1 - Godot 4.6"
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+offset_bottom = -4.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.3)
+theme_override_font_sizes/font_size = 11
+text = "v0.1  —  Godot 4"

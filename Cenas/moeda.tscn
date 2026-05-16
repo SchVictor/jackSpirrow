@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d5br08f1ept1" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/02.png" id="2_xsnfq"]
 [ext_resource type="Texture2D" uid="uid://eem77ekfxh11" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/03.png" id="3_xxfp6"]
 [ext_resource type="Texture2D" uid="uid://bx6k6i4xg2jbd" path="res://Assets/Pirate Treasure/Sprites/Gold Coin/04.png" id="4_fk2js"]
+[ext_resource type="AudioStream" uid="uid://rr7k4a6w8c7t" path="res://Assets/audios/coin.mp3" id="6_xxfp6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jvp7q"]
 animations = [{
@@ -42,5 +43,9 @@ frame_progress = 0.4619386
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784609047]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_6g22m")
+
+[node name="SomMoeda" type="AudioStreamPlayer2D" parent="." unique_id=1952517972]
+unique_name_in_owner = true
+stream = ExtResource("6_xxfp6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

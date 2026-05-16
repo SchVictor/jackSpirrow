@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://baytc038ml0eq"]
 
 [ext_resource type="PackedScene" uid="uid://ea5pqo8h2wo2" path="res://Cenas/player.tscn" id="1_70qph"]
+[ext_resource type="Script" uid="uid://bc0jxuhru6d" path="res://Cenas/fase.gd" id="1_i6ulc"]
 [ext_resource type="Texture2D" uid="uid://b3a8heyamgbpt" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_k1gy7"]
 [ext_resource type="PackedScene" uid="uid://bith3r11ruuyc" path="res://Cenas/Decoração/palmeira_esquerda.tscn" id="3_ywmpn"]
 [ext_resource type="PackedScene" uid="uid://dujo31o0otgir" path="res://Cenas/Decoração/palmeira_direita.tscn" id="4_mij0q"]
@@ -11,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cj232bichsn85" path="res://Cenas/spike.tscn" id="9_28alh"]
 [ext_resource type="PackedScene" uid="uid://dag2lgxyotyyi" path="res://Cenas/moeda.tscn" id="10_x1v8p"]
 [ext_resource type="PackedScene" uid="uid://cmslucrejereq" path="res://Cenas/bau.tscn" id="11_ilgdx"]
+[ext_resource type="PackedScene" uid="uid://c0ago3qosw7sv" path="res://Cenas/hud.tscn" id="12_jye6u"]
+[ext_resource type="AudioStream" uid="uid://g1rqm0o0v04s" path="res://Assets/audios/Me and the Devil (Instrumental - Ultra Slowed)(MP3_160K).mp3" id="14_10fst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bseg"]
 size = Vector2(15.75, 513)
@@ -407,8 +410,12 @@ sources/0 = SubResource("TileSetAtlasSource_ywmpn")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilgdx"]
 size = Vector2(26, 94)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jye6u"]
+size = Vector2(1634, 49.5)
+
 [node name="Fase" type="Node2D" unique_id=536721011 groups=["inimigo", "player"]]
 position = Vector2(0, -3)
+script = ExtResource("1_i6ulc")
 
 [node name="Chao" type="StaticBody2D" parent="." unique_id=1362021213]
 collision_layer = 7
@@ -419,7 +426,7 @@ position = Vector2(8.125, 259.5)
 shape = SubResource("RectangleShape2D_4bseg")
 
 [node name="Player" parent="." unique_id=939397487 instance=ExtResource("1_70qph")]
-position = Vector2(763, 1473)
+position = Vector2(771, 1488)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=870395852]
 tile_set = SubResource("TileSet_mij0q")
@@ -473,6 +480,7 @@ position = Vector2(1027, 1124)
 
 [node name="Spike7" parent="Spikes" unique_id=1826156767 instance=ExtResource("9_28alh")]
 z_index = -1
+position = Vector2(1256, 1765)
 
 [node name="Spike8" parent="Spikes" unique_id=582140510 instance=ExtResource("9_28alh")]
 z_index = -1
@@ -600,4 +608,18 @@ position = Vector2(647, 658)
 position = Vector2(14, 466)
 shape = SubResource("RectangleShape2D_ilgdx")
 
+[node name="AreaVoid" type="Area2D" parent="." unique_id=1958279984]
+
+[node name="void" type="CollisionShape2D" parent="AreaVoid" unique_id=1655022649]
+position = Vector2(2069, 1765.25)
+shape = SubResource("RectangleShape2D_jye6u")
+
+[node name="HUD" parent="." unique_id=1750263281 instance=ExtResource("12_jye6u")]
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=94388944]
+stream = ExtResource("14_10fst")
+autoplay = true
+parameters/looping = false
+
 [connection signal="body_entered" from="AreaFim" to="Player" method="_on_area_fim_body_entered"]
+[connection signal="body_entered" from="AreaVoid" to="." method="_on_area_void_body_entered"]

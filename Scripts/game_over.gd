@@ -1,24 +1,18 @@
 extends Control
 
-# Tela de Game Over
-# Coloque esta cena em res://Cenas/game_over.tscn
+@onready var btn_reiniciar: Button = $CenterContainer/Painel/Margem/VBox/BtnReiniciar
+@onready var btn_menu: Button = $CenterContainer/Painel/Margem/VBox/BtnMenu
+@onready var label_stats: Label = $CenterContainer/Painel/Margem/VBox/LabelStats
 
-@onready var btn_reiniciar: Button = $CenterContainer/VBoxContainer/BtnReiniciar
-@onready var btn_menu: Button = $CenterContainer/VBoxContainer/BtnMenu
-@onready var label_dica: Label = $CenterContainer/VBoxContainer/LabelDica
 
-const DICAS = [
-	"Dica: Observe o terreno antes de avançar!",
-	"Dica: Atacar inimigos pelo ar causa mais dano.",
-	"Dica: Destrua os baús para encontrar moedas!",
-	"Dica: Cuidado com os espinhos — eles são fatais.",
-	"Dica: Um pirata nunca desiste!",
-]
 
 func _ready() -> void:
 	btn_reiniciar.pressed.connect(_on_reiniciar)
 	btn_menu.pressed.connect(_on_menu)
-	label_dica.text = DICAS[randi() % DICAS.size()]
+	label_stats.text = "Moedas coletadas: %d    Tentativas: %d" % [
+		GameManager.moedas_coletadas,
+		GameManager.tentativas
+	]
 
 func _on_reiniciar() -> void:
 	GameManager.resetar()

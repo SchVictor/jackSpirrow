@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brojpic2ro515"
+path="res://.godot/imported/8-Bit Coin Sound Effect (Copyright Free)(MP3_160K).mp3-7c485cda95483416de950bd4e3238f8f.mp3str"
+
+[deps]
+
+source_file="res://Assets/audios/8-Bit Coin Sound Effect (Copyright Free)(MP3_160K).mp3"
+dest_files=["res://.godot/imported/8-Bit Coin Sound Effect (Copyright Free)(MP3_160K).mp3-7c485cda95483416de950bd4e3238f8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

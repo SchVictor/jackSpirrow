@@ -1,155 +1,165 @@
-[gd_scene format=3 uid="uid://game_over_jack"]
+[gd_scene format=3 uid="uid://nf1f51ygifjs"]
 
-[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://dlh2jay4xk2ds" path="res://Assets/Palm Tree Island/Sprites/Background/sky.png" id="2_sky"]
-[ext_resource type="Texture2D" uid="uid://b0yfcagmlj8ch" path="res://Assets/Palm Tree Island/Sprites/Background/sea.png" id="3_sea"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Orange Paper/Orange Paper (guide).png" id="4_paper"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Yellow Button/Yellow Button (guide).png" id="5_btn_yellow"]
-[ext_resource type="Texture2D" path="res://Assets/Wood and Paper UI/Sprites/Green Button/Green Button (guide).png" id="6_btn_green"]
+[ext_resource type="Script" uid="uid://0eo8dv07pote" path="res://Scripts/game_over.gd" id="1_script"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+bg_color = Color(0.18, 0.08, 0.05, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.2, 0.1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_reiniciar"]
+bg_color = Color(0.15, 0.45, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.7, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_reiniciar_hover"]
+bg_color = Color(0.2, 0.55, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.8, 0.3, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
 bg_color = Color(0, 0, 0, 0)
 draw_center = false
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reiniciar_normal"]
-texture = ExtResource("6_btn_green")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu"]
+bg_color = Color(0.2, 0.15, 0.05, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.45, 0.15, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_reiniciar_hover"]
-texture = ExtResource("6_btn_green")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-modulate_color = Color(1.2, 1.2, 0.8, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_menu_hover"]
+bg_color = Color(0.3, 0.22, 0.07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.6, 0.2, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_normal"]
-texture = ExtResource("5_btn_yellow")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_menu_hover"]
-texture = ExtResource("5_btn_yellow")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-modulate_color = Color(1.2, 1.0, 0.6, 1)
-
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" unique_id=1155859431]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="FundoEscuro" type="ColorRect" parent="."]
+[node name="Fundo" type="ColorRect" parent="." unique_id=1877238856]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.05, 0.0, 0.0, 0.72)
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.03, 0.03, 1)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -101)
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(0.4, 0.3, 0.3, 1)
-position = Vector2(519, 58.5)
-scale = Vector2(9.268, 2.049)
-texture = ExtResource("2_sky")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, -101)
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-modulate = Color(0.4, 0.3, 0.3, 1)
-position = Vector2(519, 592.5)
-scale = Vector2(9.268, 4.635)
-texture = ExtResource("3_sea")
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2092044149]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="PainelFundo" type="NinePatchRect" parent="CenterContainer"]
+[node name="Painel" type="PanelContainer" parent="CenterContainer" unique_id=1077201470]
+custom_minimum_size = Vector2(440, 0)
 layout_mode = 2
-custom_minimum_size = Vector2(420, 400)
-texture = ExtResource("4_paper")
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="Margem" type="MarginContainer" parent="CenterContainer/Painel" unique_id=2048015455]
 layout_mode = 2
-custom_minimum_size = Vector2(380, 360)
-theme_override_constants/separation = 20
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 36
 
-[node name="LabelCaveira" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Painel/Margem" unique_id=392552407]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="LabelCaveira" type="Label" parent="CenterContainer/Painel/Margem/VBox" unique_id=1602607409]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 56
 text = "💀"
-theme_override_font_sizes/font_size = 64
 
-[node name="LabelGameOver" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="LabelTitulo" type="Label" parent="CenterContainer/Painel/Margem/VBox" unique_id=1830926750]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "GAME OVER"
-theme_override_font_sizes/font_size = 40
-theme_override_colors/font_color = Color(0.65, 0.05, 0.05, 1)
-theme_override_colors/font_shadow_color = Color(0.0, 0.0, 0.0, 0.7)
+theme_override_colors/font_color = Color(0.9, 0.2, 0.1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 42
+text = "GAME OVER"
 
-[node name="LabelSubtitulo" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="LabelSubtitulo" type="Label" parent="CenterContainer/Painel/Margem/VBox" unique_id=84842288]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8, 0.55, 0.4, 1)
+theme_override_font_sizes/font_size = 15
 text = "O mar não perdoa fraqueza..."
-theme_override_font_sizes/font_size = 16
-theme_override_colors/font_color = Color(0.4, 0.2, 0.1, 1)
 
-[node name="LabelDica" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="LabelStats" type="Label" parent="CenterContainer/Painel/Margem/VBox" unique_id=791001485]
 layout_mode = 2
 size_flags_horizontal = 4
-autowrap_mode = 3
-text = ""
-theme_override_font_sizes/font_size = 13
-theme_override_colors/font_color = Color(0.3, 0.2, 0.1, 0.85)
+theme_override_colors/font_color = Color(0.9, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 14
 
-[node name="BtnReiniciar" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Separador" type="HSeparator" parent="CenterContainer/Painel/Margem/VBox" unique_id=990288190]
 layout_mode = 2
-custom_minimum_size = Vector2(300, 60)
-size_flags_horizontal = 4
-text = "⚔  TENTAR NOVAMENTE"
+
+[node name="BtnReiniciar" type="Button" parent="CenterContainer/Painel/Margem/VBox" unique_id=955852625]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 1, 0.85, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_colors/font_color = Color(0.1, 0.25, 0.05, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_reiniciar_normal")
-theme_override_styles/hover = SubResource("StyleBoxTexture_reiniciar_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_reiniciar_normal")
-theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_reiniciar")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_reiniciar")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_reiniciar_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "⚔   TENTAR NOVAMENTE"
 
-[node name="BtnMenu" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="BtnMenu" type="Button" parent="CenterContainer/Painel/Margem/VBox" unique_id=1912353925]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
-custom_minimum_size = Vector2(300, 60)
-size_flags_horizontal = 4
-text = "🏠  MENU PRINCIPAL"
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.85, 0.5, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_colors/font_color = Color(0.25, 0.1, 0.0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_menu_normal")
-theme_override_styles/hover = SubResource("StyleBoxTexture_menu_hover")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_normal")
-theme_override_styles/focus = SubResource("StyleBoxFlat_transparent")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_menu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_menu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_menu_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "🏠   MENU PRINCIPAL"

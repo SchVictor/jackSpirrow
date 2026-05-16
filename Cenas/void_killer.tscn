@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://void_killer_jack"]
+
+[ext_resource type="Script" path="res://Scripts/void_killer.gd" id="1_vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk"]
+size = Vector2(8000, 64)
+
+[node name="VoidKiller" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
