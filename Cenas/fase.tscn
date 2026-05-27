@@ -426,7 +426,7 @@ position = Vector2(8.125, 259.5)
 shape = SubResource("RectangleShape2D_4bseg")
 
 [node name="Player" parent="." unique_id=939397487 instance=ExtResource("1_70qph")]
-position = Vector2(771, 1488)
+position = Vector2(763, 1488)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=870395852]
 tile_set = SubResource("TileSet_mij0q")
